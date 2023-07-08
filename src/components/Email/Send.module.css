@@ -1,0 +1,22 @@
+
+
+.main{
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.To{
+    width: 80%;
+}
+
+.editor{
+    min-height: 200px;
+    border: 1px solid #777;
+    border-radius: 10px;
+    margin-top: 15px;
+    max-height: fit-content;
+}
