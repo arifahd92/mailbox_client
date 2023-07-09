@@ -29,9 +29,11 @@ const Inbox = () => {
   useEffect(() => {
     const fetchDaata = async () => {
       try {
+        console.log(myEmail)
         const reponse = await fetch(`https://mailbox-client-a7da2-default-rtdb.firebaseio.com/inbox/${myEmail}.json`);
 
         const mailData = await reponse.json();
+        console.log(mailData)
         console.log('useEffectcalled', mailData);
         for (let key in mailData) {
           data = [{ id: key, ...mailData[key] }, ...data]

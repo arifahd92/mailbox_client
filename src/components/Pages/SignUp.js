@@ -65,7 +65,9 @@ const SignUp = () => {
             localStorage.setItem('token', data.idToken);
             console.log('sign up successfully');
             localStorage.setItem('email', email)
+            console.log("here")
             dispatch(authAction.login())
+            console.log("here")
             redirect('/')
         }
 
