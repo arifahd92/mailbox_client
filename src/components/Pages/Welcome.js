@@ -55,8 +55,8 @@ const Welcome = () => {
     <Fragment>
       <div className={classes.main}>
         <div className={classes.header}>
-          <div className={classes.welcome}>Welcome to Mail Box</div>
-          <Link to='/send' style={{ textDecoration: 'none' }}>Compose Email</Link>
+          <div className={classes.welcome}>{`Welcome To Mail Box `}</div>
+          < Link to='/send' style={{ textDecoration: 'none' }}>Compose Email</Link>
           <Link to='/inbox' style={{ textDecoration: 'none' }}>Inbox {unRead}</Link>
           <Link to='/sentbox' style={{ textDecoration: 'none' }}>Sentbox</Link>
           <Button onClick={logoutHandler}>Logout</Button>

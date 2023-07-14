@@ -35,6 +35,10 @@ const Send = () => {
         const receiver = sender.replace(/['@','.']/g, '');
         console.log("object")
         console.log(sender, receiver);
+        if (!email || !editorState.getCurrentContent().getPlainText() || !subject) {
+            alert("All fields are mandatory")
+            return;
+        }
         fetch(`https://mailbox-client-a7da2-default-rtdb.firebaseio.com/sentbox/${sender1}.json`, {
             method: 'POST',
             body: JSON.stringify({

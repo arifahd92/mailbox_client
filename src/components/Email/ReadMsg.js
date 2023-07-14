@@ -7,6 +7,7 @@ import classes from './ReadMsg.module.css';
 const ReadMsg = () => {
   const { id } = useParams();
   const mails = useSelector(state => state.mail.mails);
+  //
   const myEmail = localStorage.getItem('email').replace(/['@','.']/g, '');
 
   const singleMail = mails.filter((item) => item.id === id);

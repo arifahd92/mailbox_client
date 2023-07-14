@@ -17,9 +17,10 @@ function App() {
   console.log(isAuth);
   return (
     <Fragment>
+      {isAuth && <Welcome />}
       <Routes>
 
-        <Route path='/' element={isAuth ? <Welcome /> : <SignUp />}></Route>
+        <Route path='/' element={!isAuth ? <SignUp /> : <Send />}></Route>
         {/* <Route path='/welcome' element={isAuth ? <Welcome /> : <SignUp />} /> */}
         <Route path='/forgotPassword' element={!isAuth ? <ForgotPassword /> : <Welcome />} />
         <Route path='/send' element={isAuth ? <Send /> : <SignUp />} />
