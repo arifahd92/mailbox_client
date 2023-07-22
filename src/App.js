@@ -10,6 +10,8 @@ import Send from './components/Email/Send';
 import ReadMsg from './components/Email/ReadMsg';
 import Inbox from './components/Email/Inbox';
 import SentBox from './components/Email/SentBox';
+import ProtectPage from './components/Email/ProtectPage';
+import Protected from './components/Email/Protected';
 
 function App() {
 
@@ -17,18 +19,19 @@ function App() {
   console.log(isAuth);
   return (
     <Fragment>
+
       {isAuth && <Welcome />}
       <Routes>
 
-        <Route path='/' element={!isAuth ? <SignUp /> : <Send />}></Route>
-        {/* <Route path='/welcome' element={isAuth ? <Welcome /> : <SignUp />} /> */}
+        <Route path='/' element={<ProtectPage Component={SignUp} />}></Route>
+
         <Route path='/forgotPassword' element={!isAuth ? <ForgotPassword /> : <Welcome />} />
-        <Route path='/send' element={isAuth ? <Send /> : <SignUp />} />
-        <Route path='/inbox' element={isAuth ? <Inbox /> : <SignUp />} />
-        <Route path='/sentbox' element={isAuth ? <SentBox /> : <SignUp />} />
-        <Route path='/message/:id' element={isAuth ? <ReadMsg /> : <SignUp />} />
+        <Route path='/send' element={<Protected Component={Send} />} />
+        <Route path='/inbox' element={<Protected Component={Inbox} />} />
+        <Route path='/sentbox' element={<Protected Component={SentBox} />} />
+        <Route path='/message/:id' element={<Protected Component={ReadMsg} />} />
       </Routes>
-    </Fragment>
+    </Fragment >
   );
 }
 
