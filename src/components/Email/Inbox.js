@@ -59,6 +59,7 @@ const Inbox = () => {
                 <div className={classes.subject}>{item.subject}</div>
                 <div className={classes.msg}>
                   <NavLink to={`/message/${item.id}`} style={{ textDecoration: 'none' }}>{'{message}'}</NavLink>
+                  {/* when any one will click on this a dynamic rout will be hitted with item -id and Read message will be renderd*/}
                 </div>
                 {item.dot && <div className={classes.dot}>
                   {/* //dot logic */}
